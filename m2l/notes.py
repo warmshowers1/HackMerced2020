@@ -1,5 +1,5 @@
 
-rawBytes = [54, 16, 84, 253, 71, 219, 82, 249, 19, 110]
+rawBytes = [133, 123, 114, 123]
 song = []
 notes = ["a", "b", "c", "d", "e", "f", "g", "r"]
 octaves = ["\'", "," ]
@@ -148,20 +148,20 @@ begin = """\\documentclass[a4paper]{article}
 
 \\begin{document}
 \\begin{lilypond}
-\\relative c' {\n"""
+\\relative c'' {\n"""
 end = """   }
 \\end{lilypond}
 \\end{document}"""
 
-f = open("song.tex","w+")
+f = open("prod/song.tex","w+")
 
 f.write(begin)
 for i in range(3, len(song), 4):
-    f.write(song[i-3] + song[i-2] + song[i-1] + song[i] + "\n")
+    f.write(song[i-3] + " " + song[i-2] + " " + song[i-1] + " " + song[i] + "\n")
 if len(song) % 4 == 3:
-    f.write(song[-3] + song[-2] + song[-1] + "\n")
+    f.write(song[-3] + " " + song[-2] + " " + song[-1] + "\n")
 if len(song) % 4 == 2:
-    f.write(song[-2] + song[-1] + "\n")
+    f.write(song[-2] + " " + song[-1] + "\n")
 if len(song) % 4 == 1:
     f.write(song[-1] + "\n")
 f.write(end)
