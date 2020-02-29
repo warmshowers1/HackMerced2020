@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>{{ title }}</title>
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}"/>
-    </head>
-    <body>
-        <h1 class="title">Welcome to {{title}}!</h1>
-        <p>{{title}} is an online tool to help you!</p>
-    </body>
-</html>
+{% extends "base.html" %}
+{% block content %}
+    {{ super() }}
+    {{ title }} is tool to help you!
+{% endblock %}
