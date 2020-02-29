@@ -143,6 +143,27 @@ for i in rawBytes:
     if i > 219 and i <= 256:
         highOct3(i)
         
+begin = """\\documentclass[a4paper]{article}
+\\usepackage{lilypond}
 
+\\begin{document}
+\\begin{lilypond}
+\\relative c' {\n"""
+end = """   }
+\\end{lilypond}
+\\end{document}"""
 
-print(list(song))
+f = open("song.tex","w+")
+
+f.write(begin)
+for i in range(3, len(song), 4):
+    f.write(song[i-3] + song[i-2] + song[i-1] + song[i] + "\n")
+if len(song) % 4 == 3:
+    f.write(song[-3] + song[-2] + song[-1] + "\n")
+if len(song) % 4 == 2:
+    f.write(song[-2] + song[-1] + "\n")
+if len(song) % 4 == 1:
+    f.write(song[-1] + "\n")
+f.write(end)
+
+f.close()
