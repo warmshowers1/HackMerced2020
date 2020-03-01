@@ -1,5 +1,7 @@
+<<<<<<< HEAD
 
 rawBytes = [-17, -12, -22, -34, 10, 2, -6, 0]
+>>>>>>> audio-reading
 song = []
 #notes = ["a", "b", "c", "d", "e", "f", "g", "r"]
 #notes = [["a", "aes"],["b", "bes"],["c", "cis"],["d", "des"],["e", "ees"], ["f", "fis"], ["g", "ges"]]
@@ -7,6 +9,9 @@ notes = ["a", "aes", "b", "bes", "c", "d", "des", "e", "ees" "f", "g", "ges"]
 #c and f are sharps, all other notes are flats
 amounts = [[0, 0],[0, 0],[0, 0],[0, 0],[0, 0], [0, 0], [0, 0]]
 
+<<<<<<< HEAD
+=======
+>>>>>>> audio-reading
 for i in rawBytes:
     if i >= -53 and i <= -44:
         song.append(notes[i % 12] + ",,, ")
