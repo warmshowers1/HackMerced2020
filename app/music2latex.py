@@ -35,6 +35,9 @@ def freq2note(freq: int):
 if __name__ == '__main__':
     freqs = wav2freq("drumspiano.wav", 0.25)
     notes = [freq2note(f) for f in freqs]
-    print(max(notes))
-    print(min(notes))
+    csv = open('results.csv', 'w')
+    for i in notes:
+        csv.write(str(i) + ', ')
+    csv.write('\n' + str(min(notes)) + ', ' + str(max(notes)))
+    csv.close()
     print(notes)

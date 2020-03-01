@@ -1,4 +1,3 @@
-
 rawBytes = [114, 114, 114]
 song = []
 #notes = ["a", "b", "c", "d", "e", "f", "g", "r"]
@@ -8,7 +7,7 @@ notes = [["a", "aes"],["b", "bes"],["c", "cis"],["d", "des"],["e", "ees"], ["f",
 amounts = [[0, 0],[0, 0],[0, 0],[0, 0],[0, 0], [0, 0], [0, 0]]
 
 def lowOct3:
-
+    
 def lowOct2:
 
 def lowOct1:
