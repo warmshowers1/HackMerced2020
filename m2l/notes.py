@@ -1,11 +1,12 @@
 
-rawBytes = [133, 123, 114, 123]
+rawBytes = [114, 114, 114]
 song = []
-notes = ["a", "b", "c", "d", "e", "f", "g", "r"]
+#notes = ["a", "b", "c", "d", "e", "f", "g", "r"]
 octaves = ["\'", "," ]
-durations = [1, 2, 4, 8, 16, 32, 64]
+notes = [["a", "aes", "ais"],["b", "bes", "bis"],["c", "ces", "cis"],["d", "des", "dis"],["e", "ees", "eis"], ["f", "fes", "fis"], ["g", "ges", "gis"]]
+amounts = [[0, 0, 0],[0, 0, 0],[0, 0, 0],[0, 0, 0],[0, 0, 0], [0, 0, 0], [0, 0, 0]]
 
-
+i
 def lowOct3(note):
     if note <= 5 :
         song.append(notes[0] + octaves[1] + octaves[1] + octaves[1])
