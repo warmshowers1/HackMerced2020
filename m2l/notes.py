@@ -1,44 +1,27 @@
 
-rawBytes = [114, 114, 114]
+rawBytes = [-17, -12, -22, -34, 10, 2, -6, 0]
 song = []
 #notes = ["a", "b", "c", "d", "e", "f", "g", "r"]
-octaves = ["\'", "," ]
-notes = [["a", "aes"],["b", "bes"],["c", "cis"],["d", "des"],["e", "ees"], ["f", "fis"], ["g", "ges"]]
+#notes = [["a", "aes"],["b", "bes"],["c", "cis"],["d", "des"],["e", "ees"], ["f", "fis"], ["g", "ges"]]
+notes = ["a", "aes", "b", "bes", "c", "d", "des", "e", "ees" "f", "g", "ges"]
 #c and f are sharps, all other notes are flats
 amounts = [[0, 0],[0, 0],[0, 0],[0, 0],[0, 0], [0, 0], [0, 0]]
 
-def lowOct3:
-
-def lowOct2:
-
-def lowOct1:
-
-def regOct:
-
-def highOct1:
-
-def highOct2:
-
-def highOct3:
-
-
 for i in rawBytes:
-    if i == 0:
-        song.append(notes[-1])
-    if i > 0 and i <= 36:
-        lowOct3(i)
-    if i > 36 and i <= 73:
-        lowOct2(i)
-    if i > 73 and i <= 109:
-        lowOct1(i)
-    if i > 109 and i <= 146:
-        regOct(i)
-    if i > 146 and i <= 183:
-        highOct1(i)
-    if i > 183 and i <= 219:
-        highOct2(i)
-    if i > 219 and i <= 256:
-        highOct3(i)
+    if i >= -53 and i <= -44:
+        song.append(notes[i % 12] + ",,, ")
+    if i > -44 and i <= -34:
+        song.append(notes[i % 12] + ",,")
+    if i > -34 and i <= -24:
+        song.append(notes[i % 12] + ",")
+    if i > -24 and i <= -14:
+        song.append(notes[i % 12])
+    if i > -14 and i <= -4:
+        song.append(notes[i % 12] + "\' ")
+    if i > -4 and i <= 6:
+        song.append(notes[i % 12] + "\'\' ")
+    if i > 6 and i <= 15:
+        song.append(notes[i % 12] + "\'\'\' ")
         
 begin = """\\documentclass[a4paper]{article}
 \\usepackage{lilypond}
@@ -49,6 +32,20 @@ begin = """\\documentclass[a4paper]{article}
 end = """   }
 \\end{lilypond}
 \\end{document}"""
+
+'''
+print(begin)
+for i in range(3, len(song), 4):
+    print(song[i-3] + " " + song[i-2] + " " + song[i-1] + " " + song[i] + "\n")
+    if len(song) % 4 == 3:
+        print(song[-3] + " " + song[-2] + " " + song[-1] + "\n")
+    if len(song) % 4 == 2:
+        print(song[-2] + " " + song[-1] + "\n")
+    if len(song) % 4 == 1:
+        print(song[-1] + "\n")
+print(end)
+'''
+
 
 f = open("prod/song.tex","w+")
 
