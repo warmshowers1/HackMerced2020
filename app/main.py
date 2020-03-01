@@ -48,19 +48,19 @@ amounts = [0 for i in range(12)]
 for i in notes:
     b = i % 12
     if i >= -53 and i <= -44:
-        song.append(letters[b] + ",,, ")
+        song.append(letters[b])# + ",,, ")
     if i > -44 and i <= -34:
-        song.append(letters[b] + ",, ")
+        song.append(letters[b])# + ",, ")
     if i > -34 and i <= -24:
-        song.append(letters[b] + ", ")
+        song.append(letters[b])# + ", ")
     if i > -24 and i <= -14:
         song.append(letters[b])
     if i > -14 and i <= -4:
-        song.append(letters[b] + "\' ")
+        song.append(letters[b])# + "\' ")
     if i > -4 and i <= 6:
-        song.append(letters[b] + "\'\' ")
+        song.append(letters[b])# + "\'\' ")
     if i > 6 and i <= 15:
-        song.append(letters[b] + "\'\'\' ")
+        song.append(letters[b])# + "\'\'\' ")
     amounts[b] += 1
 
 # These two indicies don't have relevant flat accidentals
@@ -72,10 +72,10 @@ for i in range((len(amounts) - 2), -1, -2):
         break
     else:
         key += 1
-print(key)
 
 begin = """\\documentclass[a4paper]{article}
 \\usepackage{lilypond}
+\\usepackage[margin=0.5]{geometry}
 
 \\begin{document}
 \\begin{lilypond}
